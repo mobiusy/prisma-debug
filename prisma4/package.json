@@ -1,0 +1,38 @@
+{
+  "name": "prisma4",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "format": "prettier --config .prettierrc --write src/**/*.ts",
+    "lint": "eslint . --ext .ts",
+    "lint:fix": "eslint . --ext .ts --fix",
+    "start:dev": "npx nodemon",
+    "build": "rimraf ./dist && tsc",
+    "prisma:generate": "prisma generate --schema=./src/prisma/postgres.schema.prisma",
+    "start": "yarn build && node ./dist/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@prisma/client": "4.16.2",
+    "@types/node": "^20.5.0",
+    "dotenv": "^16.3.1",
+    "postgresql": "^0.0.1",
+    "prisma": "^4.16.2",
+    "typescript": "^5.1.6"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.61.0",
+    "@typescript-eslint/parser": "^5.61.0",
+    "eslint": "^8.44.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "nodemon": "^2.0.22",
+    "prettier": "^2.8.8",
+    "rimraf": "^5.0.1",
+    "ts-node": "^10.9.1"
+  }
+}
